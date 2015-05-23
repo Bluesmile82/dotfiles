@@ -13,3 +13,19 @@ alias bi='bundle install'
 # Open Sublime Text with a very short command!
 alias s='st .'
 
+#Rails
+
+alias r='rails server'
+alias f='foreman start -f Procfile.dev'
+alias go='google-chrome http://3000:localhost'
+
+#git
+alias gst='git status'
+alias gaa='git add --all'
+alias ga='git add .'
+alias gca='git commit -am'
+alias gc='git commit -m'
+alias gca='git commit -am'
+alias gm='git merge master'
+
+
