@@ -20,12 +20,15 @@ alias f='foreman start -f Procfile.dev'
 alias go='google-chrome http://3000:localhost'
 
 #git
-alias gst='git status'
+alias gtt='git status'
 alias gaa='git add --all'
 alias ga='git add .'
 alias gca='git commit -am'
 alias gc='git commit -m'
-alias gca='git commit -am'
-alias gm='git merge master'
+alias gmm='git merge master'
+alias grm='git rebase master'
+alias gba='git branch -a'
+alias gch='git checkout'
+alias gchb='git checkout -b'
 
 
