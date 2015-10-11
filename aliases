@@ -30,5 +30,7 @@ alias grm='git rebase master'
 alias gba='git branch -a'
 alias gch='git checkout'
 alias gchb='git checkout -b'
+alias dbrs='rake db:drop db:create db:migrate db:seed'
+alias dbr='rake db:drop db:create db:migrate'
 
 
