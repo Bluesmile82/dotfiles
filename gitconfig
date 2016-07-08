@@ -1,4 +1,9 @@
 [user]
+  name = Alvaro Leal
+  email = ""
+
+[pull]
+  rebase = preserve
 
 [color]
   branch = auto
@@ -12,19 +17,44 @@
   remote = yellow
 
 [core]
-  editor = subl -n -w
+  editor = nano
   pager = less -FRSX
   mergeoptions = --no-edit
 
 [alias]
   co = checkout
+  cot = checkout --track
+  cm = checkout master
+  cb = checkout -b
   st = status -sb
   br = branch
+  bra = branch -a
+  rbr = branch -D
+  brr = branch -r
   ci = commit
   fo = fetch origin
   d = !git --no-pager diff
   dt  = difftool
   stat = !git --no-pager diff --stat
+
+  aa = add --all
+  ap = add --patch
+  ca = commit --amend
+  ac = !git add -A && git commit
+
+  tidy-up = !sh -c 'git remote prune origin && git gc --prune=now && git gc --aggressive && git tag -l | xargs git tag -d && git fetch --tags'
+  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
+  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
+  merge-branch = !git checkout master && git merge @{-1}
+  rebase-origin = !git fetch origin && git rebase origin/master
+  lg = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  count = shortlog -sn
+  up = !git fetch && git pull && git fetch --tags
+  st = status -sb
+  rh = reset HEAD
+  rhh = reset HEAD --hard
+  rhs = reset HEAD --soft
+  wc = !git whatchanged -p --abbrev-commit --pretty=medium
 
   # Clean merged branches
   sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin
@@ -36,7 +66,6 @@
   # Then other can access via `git clone git://#{YOUR_IP_ADDRESS}/
   serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 
-  m = checkout master
 
   # Removes a file from the index
   unstage = reset HEAD --
