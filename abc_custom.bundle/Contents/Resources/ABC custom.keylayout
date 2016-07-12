@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.0.4.75 on 2016-07-11 at 15:30 (GMT+2)-->
+<!--Last edited by Ukelele version 3.0.4.75 on 2016-07-12 at 10:19 (GMT+2)-->
 <keyboard group="26" id="29313" name="ABC custom" maxout="1">
 	<layouts>
 		<layout first="0" last="17" mapSet="16c" modifiers="f4"/>
@@ -849,13 +849,13 @@
 			<key code="31" output="&#x000F;"/>
 			<key code="32" output="&#x0015;"/>
 			<key code="33" output="&#x001B;"/>
-			<key code="34" output="&#x0009;"/>
+			<key code="34" output="&#x001E;"/>
 			<key code="35" output="&#x0010;"/>
 			<key code="36" output="&#x000D;"/>
-			<key code="37" output="&#x000C;"/>
-			<key code="38" output="&#x000A;"/>
+			<key code="37" output="&#x001D;"/>
+			<key code="38" output="&#x001C;"/>
 			<key code="39" output="&#x0027;"/>
-			<key code="40" output="&#x000B;"/>
+			<key code="40" output="&#x001F;"/>
 			<key code="41" output=";"/>
 			<key code="42" output="&#x001C;"/>
 			<key code="43" output=","/>
@@ -869,6 +869,7 @@
 			<key code="51" output="&#x0008;"/>
 			<key code="52" output="&#x0003;"/>
 			<key code="53" output="&#x001B;"/>
+			<key code="64" output=""/>
 			<key code="65" output="."/>
 			<key code="66" output="&#x001D;"/>
 			<key code="67" output="*"/>
@@ -880,6 +881,8 @@
 			<key code="76" output="&#x0003;"/>
 			<key code="77" output="&#x001E;"/>
 			<key code="78" output="-"/>
+			<key code="79" output=""/>
+			<key code="80" output=""/>
 			<key code="81" output="="/>
 			<key code="82" output="0"/>
 			<key code="83" output="1"/>
