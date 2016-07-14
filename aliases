@@ -33,4 +33,18 @@ alias gchb='git checkout -b'
 alias dbrs='rake db:drop db:create db:migrate db:seed'
 alias dbr='rake db:drop db:create db:migrate'
 
+alias tidy-up= !sh -c 'git remote prune origin && git gc --prune=now && git gc --aggressive && git tag -l | xargs git tag -d && git fetch --tags'
+alias create-branch= !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1'
+alias delete-branch= !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1'
+alias   merge-branch= !git checkout master && git merge @{-1}
+alias   rebase-origin= !git fetch origin && git rebase origin/master
+alias   lg= !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+alias   count= shortlog -sn
+alias   up= !git fetch && git pull && git fetch --tags
+alias   st= status -sb
+alias   rh= reset HEAD
+alias   rhh= reset HEAD --hard
+alias   rhs= reset HEAD --soft
+alias   wc= !git whatchanged -p --abbrev-commit --pretty=medium
+
 

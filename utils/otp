@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+require "thor"
+require 'net/http'
+require 'uri'
+
+class Otp < Thor
+  desc "generate","Generate an OTP for the VASCO test digipass."
+  option :aliases => :g
+  def generate
+    postData = Net::HTTP.post_form(URI.parse('http://demotoken.vasco.com/response.asp'), { typeRO: "true" })
+    response = postData.body
+    otp = response.gsub("resp=", "")
+    puts "Your one time password: #{otp}"
+    exec "echo '#{otp}' | pbcopy"
+  end
+end
+
+
+Otp.start(ARGV)
