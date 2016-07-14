@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Last edited by Ukelele version 3.0.4.75 on 2016-07-12 at 10:19 (GMT+2)-->
+<!--Last edited by Ukelele version 3.0.4.75 on 2016-07-14 at 16:16 (GMT+2)-->
 <keyboard group="26" id="29313" name="ABC custom" maxout="1">
 	<layouts>
 		<layout first="0" last="17" mapSet="16c" modifiers="f4"/>
@@ -70,7 +70,7 @@
 			<key code="24" output="="/>
 			<key code="25" output="9"/>
 			<key code="26" output="7"/>
-			<key code="27" output="/"/>
+			<key code="27" output="&#x0027;"/>
 			<key code="28" output="8"/>
 			<key code="29" output="0"/>
 			<key code="30" output="]"/>
