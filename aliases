@@ -11,7 +11,7 @@ alias be='bundle exec'
 alias bi='bundle install'
 
 # Open Sublime Text with a very short command!
-alias s='st .'
+alias s='subl .'
 
 #Rails
 
@@ -30,6 +30,11 @@ alias grm='git rebase master'
 alias gba='git branch -a'
 alias gch='git checkout'
 alias gchb='git checkout -b'
+alias gpa='git submodule foreach git pull origin master'
+alias gp='git push --recurse-submodules=check'
+alias project='cd code/icometrix/puppet-infra/modules/xnat/files/msmetrix/plugin-resources/webapp/xnat/scripts/icometrix_xnat_webuploader'
+
+
 alias dbrs='rake db:drop db:create db:migrate db:seed'
 alias dbr='rake db:drop db:create db:migrate'
 
