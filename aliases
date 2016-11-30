@@ -19,6 +19,9 @@ alias r='rails server'
 alias f='foreman start -f Procfile.dev'
 alias go='google-chrome http://3000:localhost'
 
+alias dbrs='rake db:drop db:create db:migrate db:seed'
+alias dbr='rake db:drop db:create db:migrate'
+
 #git
 alias gtt='git status'
 alias gaa='git add --all'
@@ -34,9 +37,24 @@ alias gpa='git submodule foreach git pull origin master'
 alias gp='git push --recurse-submodules=check'
 alias project='cd code/icometrix/puppet-infra/modules/xnat/files/msmetrix/plugin-resources/webapp/xnat/scripts/icometrix_xnat_webuploader'
 
+#docker
 
-alias dbrs='rake db:drop db:create db:migrate db:seed'
-alias dbr='rake db:drop db:create db:migrate'
+dockerConsole() {
+  docker exec -i -t $1 /bin/bash
+}
+
+dockerfind() {
+  docker ps | grep $1 | cut -d ' ' -f 1
+}
+
+dockerCleanup(){
+    docker rm -v $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+    docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+}
+
+alias dc=dockerConsole
+alias df=dockerfind
+alias dclean=dockerCleanup
 
 alias tidy-up= !sh -c 'git remote prune origin && git gc --prune=now && git gc --aggressive && git tag -l | xargs git tag -d && git fetch --tags'
 alias create-branch= !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1'
