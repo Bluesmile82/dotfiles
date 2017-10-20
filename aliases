@@ -39,6 +39,7 @@ alias gpa='git submodule foreach git pull origin master'
 alias gps='git stash && git pull && git stash pop'
 alias gp='git push --recurse-submodules=check'
 alias project=''
+alias gss='git stash show -u'
 
 #docker
 
