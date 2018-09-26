@@ -8,9 +8,13 @@ ZSH_THEME="robbyrussell"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+# Enhance history with substring search and purple highlighting
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git sublime zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(git sublime zsh-syntax-highlighting history-substring-search-up history-substring-search-down)
 
 source $ZSH/oh-my-zsh.sh
 export PATH='~/.rbenv/shims:/usr/local/bin:/usr/local/share:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/X11/bin:/usr/texbin:~/bin'
@@ -26,10 +30,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Gather handy aliases
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
-# Enhance history with substring search and purple highlighting
-bindkey '^[OA' history-substring-search-up
-bindkey '^[OB' history-substring-search-down
-
 # UTF-8 is our default encoding
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -37,3 +37,7 @@ export LC_ALL=en_US.UTF-8
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="~/code/dotfiles/utils:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
